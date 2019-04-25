@@ -26,6 +26,6 @@ rake install_service
 ```
 rake start
 rake stop
-rake restart # stop and start with one command
+rake restart # stop and start in one command
 rake status
 ```
