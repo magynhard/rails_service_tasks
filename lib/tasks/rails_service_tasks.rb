@@ -1,3 +1,7 @@
+#
+# Version 27.04.2019
+#
+
 require 'colorize'
 
 class RailsServiceTasks
