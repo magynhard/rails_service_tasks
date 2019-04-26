@@ -1,7 +1,6 @@
 #
 # Version 27.04.2019
 #
---
 service_name: example.service
 service_description: This is my example config
 run_as_user: root
