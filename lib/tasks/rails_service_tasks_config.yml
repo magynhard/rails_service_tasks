@@ -4,7 +4,7 @@
 --
 service_name: example.service
 service_description: This is my example config
-run_as_user: play
+run_as_user: root
 run_as_group: root
 port: 9000
 rails_env: production
