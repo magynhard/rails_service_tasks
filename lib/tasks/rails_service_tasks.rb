@@ -146,6 +146,7 @@ class RailsServiceTasks
     unless ENV['USER'] == 'root'
       raise "This rake tasks must be run as sudo/root!".red
     end
+    ENV['RAILS_ENV'] = CONFIG['rails_env']
   end
 
   def self.server_pids
