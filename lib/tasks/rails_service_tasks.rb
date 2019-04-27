@@ -161,13 +161,13 @@ class RailsServiceTasks
   end
 
   def selfstart_as_service
-    print "- starting server at port #{CONFIG['port'].yellow} as systemd service ... "
+    print "- starting server at port #{CONFIG['port'].to_s.yellow} as systemd service ... "
     `systemctl start #{SYSTEMD_SERVICE_NAME}`
     puts "done".green
   end
 
   def self.start_manually
-    print "- starting server at port #{CONFIG['port'].yellow} in daemon mode (will not be restarted on reboot!) ... "
+    print "- starting server at port #{CONFIG['port'].to_s.yellow} in daemon mode (will not be restarted on reboot!) ... "
     `rails s -e #{CONFIG['rails_env']} -p #{CONFIG['port']} -d`
     puts "done".green
   end
