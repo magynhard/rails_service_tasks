@@ -1,5 +1,5 @@
 #
-# Version 27.04.2019
+# Version 03.05.2019
 #
 
 require 'colorize'
@@ -160,7 +160,7 @@ class RailsServiceTasks
     pids
   end
 
-  def selfstart_as_service
+  def self.start_as_service
     print "- starting server at port #{CONFIG['port'].to_s.yellow} as systemd service ... "
     `systemctl start #{SYSTEMD_SERVICE_NAME}`
     puts "done".green
