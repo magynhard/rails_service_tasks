@@ -1,5 +1,5 @@
 #
-# Version 03.05.2019
+# Version 09.05.2019
 #
 
 require 'colorize'
@@ -17,9 +17,9 @@ class RailsServiceTasks
 
   SYSTEMD_TEMPLATE_FILE_PATH = File.expand_path(__dir__) + '/rails_service_tasks_template.ini'
 
-  def self.start
+  def self.start(compile_assets = true)
     ensure_run_as_root
-    compile
+    compile if compile_assets
     migrate
     if service_installed?
       start_as_service
@@ -48,8 +48,9 @@ class RailsServiceTasks
   end
 
   def self.restart
+    compile
     stop
-    start
+    start false
   end
 
   def self.status
