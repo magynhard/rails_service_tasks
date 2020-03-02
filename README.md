@@ -5,9 +5,11 @@ Supported platforms:
 - systemd (Ubuntu)
 
 ## Integrate into your rails app
-Copy the files inside of `lib/tasks/*` into the folder `lib/tasks` of your rails project.
+* Copy the files inside of `lib/tasks/*` into the folder `lib/tasks` of your rails project.
 
-Then apply your custom settings in its `rails_service_tasks_config.yml`.
+* Then apply your custom settings in its `rails_service_tasks_config.yml`.
+
+* After that include the dependencies of `Gemfile` within the `Gemfile` of your rails project.
 
 That's it! Integration in your rails app is done!
 
