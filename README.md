@@ -5,7 +5,7 @@ Supported platforms:
 - systemd (Ubuntu)
 
 ## Integrate into your rails app
-Copy the files inside of `lib/taks/*` into the same folder of your rails project.
+Copy the files inside of `lib/tasks/*` into the folder `lib/tasks` of your rails project.
 
 Then apply your custom settings in its `rails_service_tasks_config.yml`.
 
