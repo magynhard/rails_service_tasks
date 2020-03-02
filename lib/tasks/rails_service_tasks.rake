@@ -44,7 +44,7 @@ task :help do |t|
   puts "- restart            # run stop and start"
   puts "- status             # check if server is running"
   puts "- install_service    # install as systemd service"
-  puts "- uninstall_service  # install as systemd service"
+  puts "- uninstall_service  # uninstall as systemd service"
 end
 
 
