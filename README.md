@@ -24,8 +24,10 @@ rake install_service
 
 ## Commands
 ```
-rake start
-rake stop
-rake restart # stop and start in one command
-rake status
+rake start              # start server"
+rake stop               # stop server"
+rake restart            # run stop and start"
+rake status             # check if server is running"
+rake install_service    # install as systemd service"
+rake uninstall_service  # uninstall as systemd service"
 ```
