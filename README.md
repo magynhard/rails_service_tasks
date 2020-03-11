@@ -9,9 +9,7 @@ Supported platforms:
 
 * Then apply your custom settings in its `rails_service_tasks_config.yml`.
 
-* After that include the dependencies of `Gemfile` within the `Gemfile` of your rails project.
-
-* At last you have to ensure that the gem `colorize` is installed (`gem install colorize`)
+* After that include (copy) the dependencies of `Gemfile` within the `Gemfile` of your rails project. (colorize)
 
 That's it! Integration in your rails app is done!
 
