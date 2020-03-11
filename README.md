@@ -11,6 +11,8 @@ Supported platforms:
 
 * After that include the dependencies of `Gemfile` within the `Gemfile` of your rails project.
 
+* At last you have to ensure that the gem `colorize` is installed (`gem install colorize`)
+
 That's it! Integration in your rails app is done!
 
 ## Install as service or run manually
