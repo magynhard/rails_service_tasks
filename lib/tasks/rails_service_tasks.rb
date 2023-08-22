@@ -147,7 +147,7 @@ class RailsServiceTasks
 
   def self.ensure_run_as_root
     unless ENV['USER'] == 'root'
-      raise "This rake tasks must be run as sudo/root!".red
+      raise "This rake tasks must be run as sudo/root! If you are using Ruby Version Manager (RVM), then run with rvmsudo!".red
     end
     ENV['RAILS_ENV'] = CONFIG['rails_env']
   end
