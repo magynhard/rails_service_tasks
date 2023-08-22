@@ -37,6 +37,9 @@ task :uninstall_service do |t|
   RailsServiceTasks.uninstall_service
 end
 
+task :reinstall_service => [:uninstall_service, :install_service] do |t|
+end
+
 task :help do |t|
   puts "########## RAKE service tasks #######"
   puts "- start              # start server"

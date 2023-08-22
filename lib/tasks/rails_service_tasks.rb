@@ -80,7 +80,7 @@ class RailsServiceTasks
     `rails assets:precompile`
     puts "done".green
     print "  -> ensure ownership #{CONFIG['run_as_user']}:#{CONFIG['run_as_root']} on assets ... "
-     `chown #{CONFIG['run_as_user']}:#{CONFIG['run_as_root']} -R .`
+    `chown #{CONFIG['run_as_user']}:#{CONFIG['run_as_root']} -R .`
     puts "done".green
   end
 
@@ -103,8 +103,10 @@ class RailsServiceTasks
     template = File.read SYSTEMD_TEMPLATE_FILE_PATH
     command = "rails s -e #{CONFIG['rails_env'] || DEFAULT_ENV} -p #{CONFIG['port'] || DEFAULT_PORT}"
     working_dir = RAILS_ROOT_DIR
+    ruby_environment_variables = "Environment=" + ENV.to_a.select{ |e| e[0].include?('RUBY') || e[0].include?('BUNDLER') || e[0].include?('GEM_') }.map{ |e| "#{e[0]}=#{e[1]}\n" }.join("Environment=")
     template.gsub!("{{DESCRIPTION}}",CONFIG['service_description'])
     template.gsub!("{{WORKING_DIR}}",working_dir)
+    template.gsub!("{{RUBY_ENVIRONMENT_VARIABLES}}",ruby_environment_variables)
     template.gsub!("{{COMMAND}}",command)
     template.gsub!("{{USER}}",CONFIG['run_as_user'])
     template.gsub!("{{GROUP}}",CONFIG['run_as_group'])

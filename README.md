@@ -32,4 +32,5 @@ rake restart            # run stop and start"
 rake status             # check if server is running"
 rake install_service    # install as systemd service"
 rake uninstall_service  # uninstall as systemd service"
+rake reinstall_service  # uninstall and install as systemd service"
 ```
